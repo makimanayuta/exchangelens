@@ -36,7 +36,7 @@ export default function VenueCard({ r, index, region, advanced, size, bonusFocus
             <span className={`absolute -left-2 -top-2 grid h-5 w-5 place-items-center rounded-full text-[10px] font-bold ${index === 0 ? "bg-brand text-ink-950" : "bg-ink-600 text-slate-300"}`}>{index + 1}</span>
           </div>
           <div className="min-w-0">
-            <Link href={`/venues/${v.slug}`} className="block truncate text-lg font-semibold text-white hover:text-brand">{v.name}</Link>
+            <Link href={`/exchange/${v.slug}`} className="block truncate text-lg font-semibold text-white hover:text-brand">{v.name}</Link>
             <div className="mt-1 flex flex-wrap gap-1.5">
               <span className="chip">{v.kind === "cex" ? "CEX" : "DEX"}</span>
               <span className="chip">{v.bestFor}</span>

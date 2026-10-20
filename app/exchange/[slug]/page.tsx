@@ -8,16 +8,21 @@ import ReferralCard from "@/components/ReferralCard";
 import VenueLogo from "@/components/VenueLogo";
 import Flag from "@/components/Flag";
 
+type Props = { params: Promise<{ slug: string }> };
+
 export function generateStaticParams() { return VENUES.map((v) => ({ slug: v.slug })); }
-export function generateMetadata({ params }: { params: { slug: string } }) {
-  const v = getVenue(params.slug);
-  return { title: v ? `${v.name} fees, availability & referral bonus` : "Venue" };
+
+export async function generateMetadata({ params }: Props) {
+  const { slug } = await params;
+  const v = getVenue(slug);
+  return { title: v ? `${v.name} fees, availability & referral bonus` : "Exchange" };
 }
 
 const AV = { yes: ["Available", "text-emerald-400"], limited: ["Check", "text-amber-400"], no: ["No", "text-rose-400"] } as const;
 
-export default function VenuePage({ params }: { params: { slug: string } }) {
-  const v = getVenue(params.slug);
+export default async function VenuePage({ params }: Props) {
+  const { slug } = await params;
+  const v = getVenue(slug);
   if (!v) notFound();
   const rows: [string, string][] = [
     ["Spot maker / taker", v.spot ? `${v.spot.maker} / ${v.spot.taker} bps` : "n/a"],
