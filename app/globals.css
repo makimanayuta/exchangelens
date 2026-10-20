@@ -1,27 +1,24 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+:root { color-scheme: dark; }
+html { scroll-behavior: smooth; }
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  @apply bg-ink-950 text-slate-200 antialiased font-sans;
+  background-image:
+    radial-gradient(900px 500px at 15% -10%, rgba(52,211,153,0.12), transparent 60%),
+    radial-gradient(800px 500px at 90% 0%, rgba(34,211,238,0.10), transparent 60%);
+  background-repeat: no-repeat;
 }
+::selection { background: rgba(52,211,153,0.35); }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+@layer components {
+  .card { @apply rounded-2xl border border-white/[0.07] bg-ink-800/70 backdrop-blur; }
+  .btn { @apply inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3 text-sm font-semibold transition; }
+  .btn-primary { @apply btn bg-gradient-to-r from-brand to-brand-cyan text-ink-950 hover:brightness-110 shadow-glow; }
+  .btn-ghost { @apply btn border border-white/10 bg-white/[0.03] text-slate-200 hover:bg-white/[0.07]; }
+  .chip { @apply inline-flex items-center rounded-full border border-white/10 bg-white/[0.04] px-2.5 py-0.5 text-xs text-slate-300; }
+  .label { @apply text-xs font-semibold uppercase tracking-wider text-slate-400; }
 }
