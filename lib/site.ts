@@ -1,9 +1,9 @@
 export const SITE = {
-  name: "VenueScope",
+  name: "Exchange Lens",
   tagline: "Find the best place to trade crypto.",
   description:
     "Compare real trading costs, liquidity, supported assets and platform features across centralized and decentralized exchanges.",
-  url: "https://example.com", // TODO: your domain
+  url: "https://exchangelens.io", // TODO: your domain
   contactEmail: "nicolascally.h@gmail.com", // TODO
 };
 export const DATA_UPDATED = "19 Oct 2026";

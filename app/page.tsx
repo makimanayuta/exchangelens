@@ -14,7 +14,7 @@ export default function Home() {
     <>
       <section className="mx-auto max-w-6xl px-5 pt-16 pb-10 md:pt-24">
         <div className="mx-auto max-w-3xl text-center">
-          <span className="chip mb-5">Crypto trading venue comparison engine</span>
+          <span className="chip mb-5 text-sm">Crypto exchange comparison engine</span>
           <h1 className="text-4xl font-extrabold tracking-tight text-white md:text-6xl">
             Find the best place to{" "}
             <span className="bg-gradient-to-r from-brand to-brand-cyan bg-clip-text text-transparent">trade crypto</span>
@@ -26,7 +26,7 @@ export default function Home() {
         </div>
         <div className="mt-12 relative z-10"><Finder /></div>
         <p className="mt-4 text-center text-xs text-slate-500">
-          {VENUES.length} venues compared · CEX and DEX · No account needed
+          {VENUES.length} exchanges compared · CEX and DEX · No account needed
         </p>
       </section>
 
