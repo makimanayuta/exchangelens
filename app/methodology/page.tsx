@@ -13,7 +13,8 @@ export default function Methodology() {
         <li><b>Spread</b>: half the bid-ask gap per market order.</li>
         <li><b>Slippage</b>: estimated impact beyond the top of book for your size. Spread and slippage don't overlap, so impact isn't counted twice.</li>
         <li><b>Funding</b> (perps): notional × rate per 8h × 3 × days held. It can be positive or negative.</li>
-        <li><b>Withdrawal</b>: only if you choose to move the asset off the platform.</li>
+              <h2>Deposits and withdrawals</h2>
+      <p>We assume you always use the cheapest available method, both to fund your account and to take your assets out (for example a bank transfer instead of a card, or a low-cost network instead of an expensive one). Where a platform charges a percentage on the amount withdrawn, we include it. Flat blockchain (network) fees and fixed minimums are not counted, so a withdrawal with no percentage fee is treated as free. Your real cost can be higher if you choose a more expensive method.</p>
       </ul>
 
       <h2>Ranking</h2>
@@ -28,10 +29,10 @@ export default function Methodology() {
       <p>DEXs add gas, bridge costs, wallet requirements and smart-contract risk. We show those separately and don't pretend they are equivalent to custodial risk.</p>
 
             <h2>Simple route vs order book</h2>
-      <p>Many apps charge a single all-in percentage on the Buy button (the spread is baked into the quote). Where a venue offers both, we price the order book by default and switch to the Buy-button price when you tick “Use the simple Buy button”. Brokers and CFD providers (eToro, XTB) only have the simple route.</p>
+      <p>Many apps charge a single all-in percentage on the Buy button (the spread is baked into the quote). Where an exchange offers both, we price the order book by default and switch to the Buy-button price when you tick “Use the simple Buy button”. Brokers and CFD providers (eToro, XTB) only have the simple route.</p>
 
       <h2>Regions</h2>
-      <p>Each venue stores a default availability plus exceptions per jurisdiction. Sub-regions such as France and Germany inherit from the EU unless a venue overrides them. Where a venue is “Unavailable”, it is removed from your results. “Check region” means a restriction, a separate local entity, or conflicting sources. Some fees also differ by region (for example Coinbase and Upbit), and we apply the regional rate.</p>
+      <p>Each exchange stores a default availability plus exceptions per jurisdiction. Sub-regions such as France and Germany inherit from the EU unless an exchange overrides them. Where an exchange is “Unavailable”, it is removed from your results. “Check region” means a restriction, a separate local entity, or conflicting sources. Some fees also differ by region (for example Coinbase and Upbit), and we apply the regional rate.</p>
 
       <h2>Limits</h2>
       <p>Fees depend on tier, product, region and promotions. Our estimates cover standard accounts. Always confirm on the official page before trading. This is not financial advice.</p>

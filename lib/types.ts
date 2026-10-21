@@ -8,7 +8,7 @@ export interface FeePair { maker: number; taker: number }
 
 export interface Referral {
   headline: string;
-  rewardType: "fee-voucher" | "bonus-credit" | "withdrawable" | "mixed";
+  rewardType: "fee-voucher" | "bonus-credit" | "fee-discount" | "crypto" | "cash" | "withdrawable" | "mixed";
   availability: string;
   requirements: { kyc: boolean; deposit?: string; volume?: string; holding?: string };
   deadline?: string;
@@ -18,7 +18,7 @@ export interface Referral {
   verified: string;
 }
 
-export interface Venue {
+export interface Exchange {
   slug: string;
   name: string;
   domain: string;
@@ -28,18 +28,18 @@ export interface Venue {
   products: { spot: boolean; perp: boolean };
   access: Access;
   regionNote?: string;
-  /** all fees in basis points (1 bp = 0.01%) */
+  /** all fees in % */
   spot: FeePair | null;
   /** region/parent overrides, e.g. { EU: {...} } */
   spotByRegion?: Record<string, FeePair>;
   perp: (FeePair & { funding8h: number }) | null;
- /** full bid-ask spread on BTC, bps */
-  spreadBps: number;
-  /** extra impact beyond top of book for [100, 500, 5000, 25000] EUR, bps (our estimates) */
-  slipBps: [number, number, number, number];
-  deposit: { bps: number; fixedEur: number; note: string };
-  withdrawBtcEur: number;
-  conversionBps: number;
+ /** full bid-ask spread on BTC, % */
+  spread: number;
+  /** extra impact beyond top of book for [100, 500, 5000, 25000] USD, % (our estimates) */
+  slip: [number, number, number, number];
+  deposit: { nominal: number; note: string }; // Deposits are the only fees that are not in %, but in nominal fiat. E.g. 0.5 EUR for a SEPA transfer.
+  withdraw: number;
+  conversion: number;
   assets: number;
   liquidityScore: number;
   easeScore: number;

@@ -1,7 +1,7 @@
 import Finder from "@/components/Finder";
 import { SITE } from "@/lib/site";
 import Link from "next/link";
-import { VENUES } from "@/lib/venues";
+import { EXCHANGES } from "@/lib/exchanges";
 
 const PILLARS = [
   { t: "Real total cost", d: "Fees, spread, slippage, deposit, withdrawal and funding, summed in euros and percent for your trade." },
@@ -26,7 +26,7 @@ export default function Home() {
         </div>
         <div className="mt-12 relative z-10"><Finder /></div>
         <p className="mt-4 text-center text-xs text-slate-500">
-          {VENUES.length} exchanges compared · CEX and DEX · No account needed
+          {EXCHANGES.length} exchanges compared · CEX and DEX · No account needed
         </p>
       </section>
 
@@ -47,7 +47,7 @@ export default function Home() {
           <div>
             <h2 className="text-2xl font-bold text-white">Fee ≠ cost</h2>
             <p className="mt-3 text-slate-400">
-              A “zero-fee” venue with a wide spread or expensive withdrawals can cost more than one with a visible fee.
+              A “zero-fee” exchange with a wide spread or expensive withdrawals can cost more than one with a visible fee.
               {" "}{SITE.name} adds every component so you can compare like with like.
             </p>
             <div className="mt-6 flex gap-3">

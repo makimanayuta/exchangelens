@@ -1,15 +1,18 @@
-import { Venue } from "@/lib/types";
+import { Exchange } from "@/lib/types";
 import OutLink from "./OutLink";
 
 const TYPE = {
   "fee-voucher": "Fee-rebate vouchers",
   "bonus-credit": "Trading bonus credit",
+  "fee-discount": "Fee discount",
+  "crypto": "Crypto rewards",
+  "cash": "Cash rewards",
   withdrawable: "Withdrawable funds",
   mixed: "Mixed rewards",
 } as const;
 
-export default function ReferralCard({ venue }: { venue: Venue }) {
-  const r = venue.referral;
+export default function ReferralCard({ exchange }: { exchange: Exchange }) {
+  const r = exchange.referral;
   if (!r) return null;
   const req = r.requirements;
   const checks = [
@@ -53,7 +56,7 @@ export default function ReferralCard({ venue }: { venue: Venue }) {
 
         <div className="mt-5 flex flex-wrap items-center justify-between gap-3">
           <p className="text-xs text-slate-500">Terms change often. Verify on the exchange. Checked {r.verified}.</p>
-          {venue.affiliateUrl && <OutLink venue={venue} className="btn-primary !px-4 !py-2.5">Claim via referral link</OutLink>}
+          {exchange.affiliateUrl && <OutLink exchange={exchange} className="btn-primary !px-4 !py-2.5">Claim via referral link</OutLink>}
         </div>
       </div>
     </div>

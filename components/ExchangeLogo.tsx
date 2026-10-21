@@ -2,7 +2,7 @@
 /* eslint-disable @next/next/no-img-element */
 import { useState } from "react";
 
-export default function VenueLogo({ slug, name, domain, size = 56 }: { slug: string; name: string; domain: string; size?: number }) {
+export default function ExchangeLogo({ slug, name, domain, size = 56 }: { slug: string; name: string; domain: string; size?: number }) {
   const sources = [
     //`/logos/${slug}.svg`,
     `/logos/${slug}.png`,
